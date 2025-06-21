@@ -1,7 +1,9 @@
 import sys
 
 def fibonacci(fib_to: int):
-    if fib_to == 0:
+    if fib_to < 0:
+        return "Cannot fibonacci a negative number!"
+    elif fib_to == 0:
         return 0
     elif fib_to == 1:
         return 1
