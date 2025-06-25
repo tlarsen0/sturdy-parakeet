@@ -1,5 +1,9 @@
 import sys
 
+## constants
+MODEL_VERSION = 'gpt-4.1'
+PARAKEET_SAYS = 'Parakeet says:'
+
 from openai import OpenAI
 client = OpenAI()
 
@@ -10,10 +14,10 @@ def summarize_code(file_name):
         prompt = f"Summarize the following code:\n ```{code}```"
         ##print(f"prompt = {prompt}")
         response = client.responses.create(
-            model = 'gpt-4.1',
+            model = MODEL_VERSION,
             input = prompt
         )
-        print("Parakeet says:")
+        print(PARAKEET_SAYS)
         print(response.output_text)
 
 
@@ -24,10 +28,10 @@ def convert_code_helper(file_name, new_language_pretty):
         prompt = f"Convert the following code into {new_language_pretty}:\n ```{code}```"
         ##print(f"prompt = {prompt}")
         response = client.responses.create(
-            model = 'gpt-4.1',
+            model = MODEL_VERSION,
             input = prompt
         )
-        print("Parakeet says:")
+        print(PARAKEET_SAYS)
         print(response.output_text)
 
 
@@ -37,10 +41,15 @@ def suggest_unit_tests(file_name):
     with open(file_name, 'r') as code_file:
         code = code_file.read()
         prompt = f"Suggest unit tests for the following code:\n ```{code}```"
-        print(f"prompt = {prompt}")
+        response = client.responses.create(
+            model = MODEL_VERSION,
+            input = prompt
+        )
+        print(PARAKEET_SAYS)
+        print(response.output_text)
 
 
-print("parakeet v0.1: for fun and learning.")
+print("parakeet v0.1: For fun and learning.")
 if len(sys.argv) < 3:
     print("Need at least 2 parameters: parakeet [command] [input]")
     sys.exit(1)
