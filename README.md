@@ -1,2 +1,2 @@
 # sturdy-parakeet
-A personal coding project.
+A personal coding project with OpenAI.
