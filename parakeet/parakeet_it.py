@@ -1,3 +1,22 @@
+#!/usr/bin/env python3
+"""
+A command-line tool to perform AI-powered actions on code files.
+
+This script uses the OpenAI API to:
+- Summarize code
+- Convert code between languages
+- Suggest unit tests
+
+Usage:
+    python parakeet_it.py [command] [file_path]
+
+Commands:
+    summarize: Summarizes the code in the given file.
+    convert-java: Converts the code to Java.
+    convert-csharp: Converts the code to C#.
+    convert-python: Converts the code to Python.
+    unit-tests: Suggests unit tests for the code.
+"""
 import sys
 
 ## constants
