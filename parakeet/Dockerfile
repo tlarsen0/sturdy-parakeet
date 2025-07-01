@@ -10,5 +10,5 @@ COPY fibonacci.py ./
 RUN pip install --no-cache-dir -r requirements.txt
 
 # the command
-CMD ["python3", "parakeet_it.py", "convert-java", "fibonacci.py"]
+CMD ["python3", "parakeet_it.py"]
 
